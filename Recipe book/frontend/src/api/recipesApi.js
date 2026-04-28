@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000/api';
+const BASE_URL = 'https://recipe-book-app-glxz.onrender.com/api';
 
 export const getRecipes = async ({ search, categoryIds, favorites } = {}) => {
   const params = new URLSearchParams();
