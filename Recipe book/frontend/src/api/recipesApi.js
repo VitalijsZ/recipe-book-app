@@ -1,4 +1,5 @@
-const BASE_URL = 'https://recipe-book-app-glxz.onrender.com/api';
+const BASE_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
 export const getRecipes = async ({ search, categoryIds, favorites } = {}) => {
   const params = new URLSearchParams();
