@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import dj_database_url
 from decouple import config, Csv
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,7 +98,7 @@ WSGI_APPLICATION = 'recipe_book.wsgi.application'
 # On Render: set DATABASE_URL to the PostgreSQL connection string.
 # ---------------------------------------------------------------------------
 
-_DATABASE_URL = config('DATABASE_URL', default='')
+_DATABASE_URL = os.getenv("DATABASE_URL")
 
 if _DATABASE_URL:
     DATABASES = {
@@ -109,6 +111,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 
 
 # ---------------------------------------------------------------------------
